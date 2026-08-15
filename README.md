@@ -62,6 +62,42 @@ List interfaces:
 python sniffer.py --list-ifaces
 ```
 
+![Interface Detection / Selection](screenshots/interface-detection.png)
+
+*Interface detection output showing human-readable names and addresses.*
+
+### TCP Packet Capture
+
+Capture TCP traffic by using the `-f tcp` filter. This captures TCP packets on the selected interface and prints source/destination IPs, ports, length, and a safe payload preview.
+
+![TCP Packet Capture](screenshots/tcp-capture.png)
+
+*TCP packet capture on the Wi-Fi interface.*
+
+### UDP / DNS Packet Capture
+
+Capture UDP traffic (including DNS) with the `-f udp` or `-f dns` filters. The `dns` filter is translated to a libpcap expression that captures DNS over UDP and TCP (port 53).
+
+![UDP / DNS Packet Capture](screenshots/dns-capture.png)
+
+*DNS query and response captured on UDP port 53.*
+
+### ICMP Packet Capture
+
+Use `-f icmp` to capture ICMP echo requests and replies and inspect their metadata.
+
+![ICMP Packet Capture](screenshots/icmp-capture.png)
+
+*ICMP echo request/reply captured on the Wi-Fi interface.*
+
+### ARP Packet Capture
+
+Use `-f arp` to observe ARP requests and replies on a local network segment.
+
+![ARP Packet Capture](screenshots/arp-capture.png)
+
+*ARP request captured on the local network.*
+
 ## Usage Examples
 
 Start sniffing on default interface (first available):
@@ -122,6 +158,10 @@ Run pytest:
 ```bash
 pytest -q
 ```
+
+![Tests Passed](screenshots/tests-passed.png)
+
+*Unit tests and verification run locally showing passing test suite.*
 
 ## Ethical and Legal Notice
 
