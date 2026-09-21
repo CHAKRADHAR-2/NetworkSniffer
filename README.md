@@ -1,4 +1,4 @@
-# CodeAlpha Basic Network Sniffer
+#Basic Network Sniffer
 
 ## Project Overview
 
